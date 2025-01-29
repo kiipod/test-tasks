@@ -1,0 +1,12 @@
+/storage/logs
+/.fleet
+/.idea
+/.vscode
+*cache
+_ide_helper.php
+.env
+.env.dev.example
+docker-compose.yml
+docker-compose-production.yml
+node_modules/
+/public/storage
