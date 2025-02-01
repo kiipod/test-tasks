@@ -4,19 +4,14 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Contractor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<User>
+ * @extends Factory<Contractor>
  */
-class UserFactory extends Factory
+class ContractorFactory extends Factory
 {
-    /**
-     * The current password being used by the factory.
-     */
-    protected static ?string $password;
-
     /**
      * Define the model's default state.
      *
@@ -28,9 +23,7 @@ class UserFactory extends Factory
             'name' => $this->faker->firstName(),
             'second_name' => $this->faker->optional()->firstName(),
             'surname' => $this->faker->lastName(),
-            'phone' => $this->faker->phoneNumber(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'password' => bcrypt('password'),
+            'phone' => $this->faker->unique()->phoneNumber(),
         ];
     }
 }
