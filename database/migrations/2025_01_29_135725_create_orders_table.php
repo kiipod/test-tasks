@@ -31,7 +31,7 @@ return new class extends Migration
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
             $table->text('description');
-            $table->date('date');
+            $table->datetime('date');
             $table->string('address');
             $table->decimal('amount', 10);
             $table->set('status', ['created', 'assigned', 'completed'])->default('created');

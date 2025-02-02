@@ -13,6 +13,7 @@ use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
+use Laravel\Passport\HasApiTokens;
 
 /**
  * App\Models\User
@@ -48,7 +49,7 @@ use Illuminate\Support\Carbon;
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -57,7 +58,15 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'second_name',
+        'surname',
+        'phone',
         'email',
         'password',
+        'partnership_id'
+    ];
+
+    protected $hidden = [
+        'password'
     ];
 }

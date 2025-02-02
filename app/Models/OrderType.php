@@ -27,4 +27,7 @@ use Illuminate\Support\Carbon;
  */
 class OrderType extends Model
 {
+    protected $fillable = [
+        'name',
+    ];
 }

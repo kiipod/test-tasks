@@ -34,4 +34,9 @@ class ContractorExOrderType extends Model
 {
     /** @use HasFactory<ContractorExOrderTypeFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'contractor_id',
+        'order_type_id',
+    ];
 }

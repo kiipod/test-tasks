@@ -46,4 +46,15 @@ class Order extends Model
 {
     /** @use HasFactory<OrderFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'order_type_id',
+        'partnership_id',
+        'user_id',
+        'description',
+        'date',
+        'address',
+        'amount',
+        'status',
+    ];
 }
