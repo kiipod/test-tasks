@@ -9,6 +9,7 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -38,4 +39,21 @@ class Contractor extends Model
 {
     /** @use HasFactory<ContractorFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'second_name',
+        'surname',
+        'phone',
+    ];
+
+    /**
+     * Отношение для таблицы, которая отслеживает, от каких типов заказов исполнитель отказался.
+     *
+     * @return BelongsToMany
+     */
+    public function excludedOrderTypes(): BelongsToMany
+    {
+        return $this->belongsToMany(OrderType::class, 'contractor_ex_order_types', 'contractor_id', 'order_type_id');
+    }
 }

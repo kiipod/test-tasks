@@ -36,4 +36,10 @@ class OrderContractor extends Model
 {
     /** @use HasFactory<OrderContractorFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'order_id',
+        'contractor_id',
+        'amount',
+    ];
 }

@@ -32,4 +32,8 @@ class Partnership extends Model
 {
     /** @use HasFactory<PartnershipFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+    ];
 }
