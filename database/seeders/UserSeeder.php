@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->count(15)
+        User::factory()->count(30)
             ->state(new Sequence(fn ($sequence) => ['partnership_id' => Partnership::all()->random()]))
             ->create();
     }

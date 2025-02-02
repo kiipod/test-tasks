@@ -17,7 +17,7 @@ class ContractorExOrderTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        ContractorExOrderType::factory()->count(10)
+        ContractorExOrderType::factory()->count(20)
             ->state(new Sequence(fn ($sequence) => ['contractor_id' => Contractor::all()->random(),
                 'order_type_id' => OrderType::all()->random()]
             ))->create();

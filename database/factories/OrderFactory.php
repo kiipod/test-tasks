@@ -21,7 +21,7 @@ class OrderFactory extends Factory
     {
         return [
             'description' => $this->faker->text(),
-            'date' => $this->faker->date(),
+            'date' => $this->faker->datetime(),
             'address' => $this->faker->address(),
             'amount' => $this->faker->randomFloat(2, 100, 10000),
             'status' => $this->faker->randomElement(['created', 'assigned', 'completed']),
