@@ -43,8 +43,8 @@ class AuthController extends Controller
                 'user' => $user,
                 'token' => $token
             ]);
-        } catch (\Exception $e) {
-            return new FailResponse($e->getMessage());
+        } catch (\Exception) {
+            return new FailResponse();
         }
     }
 
